@@ -31,11 +31,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
@@ -52,12 +52,8 @@ android {
 
 dependencies {
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0")){
-        exclude(group = "org.bouncycastle", module = "bcprov-jdk18on")
-    }
-    implementation("com.google.firebase:firebase-auth-ktx"){
-        exclude(group = "org.bouncycastle", module = "bcprov-jdk18on")
-    }
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("org.bouncycastle:bcprov-jdk15to18:1.76") // Java 8+ compatible
